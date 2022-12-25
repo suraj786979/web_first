@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project 3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #151515;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .container{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+        }
+        .box{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg);
+            animation: suraj 4s linear infinite;
+        
+        }
+        @keyframes suraj {
+            0%{
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+            100%{
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
+        span{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(#050505,#fe1f01);
+            transform: rotateY(calc(90deg*var(--i))) translateZ(100px);
+        }
+        .top{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #222;
+            transform: rotateX(90deg) translateZ(-200px);
+            filter: blur(20px);
+            box-shadow: 0 0 12px 15px rgb(254, 25, 4);
+        }
+        .green{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #222;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .top::before{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgb(250, 4, 4);
+        }
+        .green::before{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="green"></div>
+            <div class="top"></div>
+            <span style="--i:0"></span>
+            <span style="--i:1"></span>
+            <span style="--i:2"></span>
+            <span style="--i:3"></span>
+        </div>
+    </div>
+</body>
+</html>
